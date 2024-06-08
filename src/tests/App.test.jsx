@@ -13,14 +13,25 @@ describe("testing whether the thing works", () => {
   });
 });
 
-describe("App component", () => {
+describe("Homepage component", () => {
   it("rendering correct link text", () => {
     render(
       <BrowserRouter>
         <App />
       </BrowserRouter>
     );
-    const links = screen.getByRole("heading");
-    expect(links.textContent).toMatch("Homepage");
+    const heading = screen.getByRole("heading");
+    expect(heading.textContent).toMatch("Homepage");
+  });
+
+  it("main content rendering properly", () => {
+    render(
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    );
+
+    const mainText = screen.getByRole("test");
+    expect(mainText.className).toContain("lol");
   });
 });

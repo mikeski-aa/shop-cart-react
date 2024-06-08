@@ -10,6 +10,9 @@ function App() {
     <div>
       <h1>Homepage</h1>
       <Nav />
+      <div role="test" className="lol">
+        dddd
+      </div>
     </div>
   );
 }
