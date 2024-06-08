@@ -17,4 +17,10 @@ describe("App component", () => {
     render(<App />);
     expect(screen.getByRole("heading").textContent).toMatch("Vite + React");
   });
+
+  it("renders", () => {
+    const { container } = render(<App />);
+
+    expect(container).toMatchSnapshot();
+  });
 });
