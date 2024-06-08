@@ -3,7 +3,7 @@ import App from "../App";
 import { ErrorPage } from "./ErrorPage";
 import Shop from "../Shop";
 
-const routes = createBrowserRouter([
+const routes = [
   {
     path: "/",
     element: <App />,
@@ -13,6 +13,6 @@ const routes = createBrowserRouter([
     path: "/shop",
     element: <Shop />,
   },
-]);
+];
 
 export default routes;

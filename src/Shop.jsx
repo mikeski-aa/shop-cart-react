@@ -1,3 +1,9 @@
+import { Link } from "react-router-dom";
+
 export default function Shop() {
-  return <h1>Shop</h1>;
+  return (
+    <div>
+      <Link to="/">Back home</Link>
+    </div>
+  );
 }

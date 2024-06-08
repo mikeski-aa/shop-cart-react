@@ -1,0 +1,24 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`testing navigation bar > check snapshot render 1`] = `
+<div>
+  <div
+    class="navBar"
+  >
+    <button>
+      <a
+        href="/"
+      >
+        Homepage
+      </a>
+    </button>
+    <button>
+      <a
+        href="/shop"
+      >
+        Shop
+      </a>
+    </button>
+  </div>
+</div>
+`;

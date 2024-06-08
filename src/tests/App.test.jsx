@@ -1,5 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
+import { BrowserRouter } from "react-router-dom";
 import App from "../App.jsx";
 
 describe("testing whether the thing works", () => {
@@ -13,14 +14,13 @@ describe("testing whether the thing works", () => {
 });
 
 describe("App component", () => {
-  it("renders correct heading", () => {
-    render(<App />);
-    expect(screen.getByRole("heading").textContent).toMatch("Vite + React");
-  });
-
-  it("renders", () => {
-    const { container } = render(<App />);
-
-    expect(container).toMatchSnapshot();
+  it("rendering correct link text", () => {
+    render(
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    );
+    const links = screen.getByRole("heading");
+    expect(links.textContent).toMatch("Homepage");
   });
 });
