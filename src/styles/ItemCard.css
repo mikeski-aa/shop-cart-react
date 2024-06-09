@@ -1,0 +1,21 @@
+.itemCard {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  background-color: peachpuff;
+  outline: 2px solid black;
+}
+
+.itemImage {
+  max-width: 70px;
+  max-height: 70px;
+}
+
+.itemDescription {
+  overflow: hidden;
+}
+
+.allItems {
+  display: flex;
+  flex-wrap: wrap;
+}

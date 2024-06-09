@@ -19,16 +19,18 @@ export default function Shop() {
     <div>
       <h1>Shop</h1>
       <Nav />
-      {items.map((item) => (
-        <ItemCard
-          key={item.id}
-          image={item.image}
-          title={item.title}
-          price={item.price}
-          description={item.description}
-          rating={item.rating.rate}
-        />
-      ))}
+      <div className="allItems">
+        {items.map((item) => (
+          <ItemCard
+            key={item.id}
+            image={item.image}
+            title={item.title}
+            price={item.price}
+            description={item.description}
+            rating={item.rating.rate}
+          />
+        ))}
+      </div>
     </div>
   );
 }

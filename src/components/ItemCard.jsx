@@ -1,5 +1,6 @@
 import { ItemContext } from "../Shop";
 import { useContext } from "react";
+import "../styles/ItemCard.css";
 
 // function for rendering the individual item card
 
@@ -7,7 +8,7 @@ function ItemCard(props) {
   return (
     <div className="itemCard">
       <div className="imageContainer">
-        <img src={props.image}></img>
+        <img className="itemImage" src={props.image}></img>
       </div>
       <div className="itemNameAndPrice">
         <h3 className="itemName">{props.title}</h3>
