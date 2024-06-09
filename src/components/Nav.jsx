@@ -12,6 +12,7 @@ function Nav() {
       <button>
         <Link to="/shop">Shop</Link>
       </button>
+      <button type="button">Cart</button>
     </div>
   );
 }
