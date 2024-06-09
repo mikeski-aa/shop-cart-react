@@ -1,10 +1,10 @@
-import { describe, expect, it } from "vitest";
-import { getCallResults } from "../components/ApiFetch";
+import { describe, expect, it, vi } from "vitest";
+import { getCallResults, callShopApi } from "../components/ApiFetch";
 
-describe("Test if API fetch is working", () => {
-  it("tests if object is recieved", async () => {
-    let x = getCallResults().length;
+describe("callShopAPI fetches product data", () => {
+  it("checks if API returns array after returning promise", async () => {
+    const result = await callShopApi();
 
-    expect(x).toEqual("20");
+    expect(result).toBeInstanceOf(Array);
   });
 });

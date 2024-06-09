@@ -20,11 +20,9 @@ async function callShopApi() {
   }
 }
 
-function getCallResults(setstate) {
+function getCallResults() {
   callShopApi().then((result) => {
-    useEffect(() => {
-      setstate(result);
-    }, [result]);
+    console.log(result);
   });
 }
 
