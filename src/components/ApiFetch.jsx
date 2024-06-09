@@ -15,6 +15,7 @@ async function callShopApi() {
       return jsonFile;
     }
   } catch (error) {
+    // error needs to give more details, add later
     alert("Oops something went wrong!");
     return error;
   }
