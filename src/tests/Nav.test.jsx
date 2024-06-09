@@ -1,6 +1,6 @@
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
-import { describe, expect, it, screen } from "vitest";
+import { describe, expect, it } from "vitest";
 import { Nav } from "../components/Nav";
 
 describe("testing navigation bar", () => {
@@ -21,7 +21,7 @@ describe("testing navigation bar", () => {
       </BrowserRouter>
     );
 
-    const showElement = screen.getByText(/Lol/i);
+    const showElement = screen.getByRole("button", { name: "Cart" });
 
     expect(showElement.textContent).toBe("Cart");
   });
