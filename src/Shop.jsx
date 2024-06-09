@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect, createContext } from "react";
 import { callShopApi } from "./components/ApiFetch";
+import { Nav } from "./components/Nav";
+import { ItemCard } from "./components/ItemCard";
+
+export const ItemContext = createContext();
 
 export default function Shop() {
   const [items, setItems] = useState([]);
@@ -13,13 +17,18 @@ export default function Shop() {
 
   return (
     <div>
-      <Link to="/">Back home</Link>
-      <ul>
-        {" "}
-        {items.map((item) => (
-          <li key={item.id}>{item.title}</li>
-        ))}
-      </ul>
+      <h1>Shop</h1>
+      <Nav />
+      {items.map((item) => (
+        <ItemCard
+          key={item.id}
+          image={item.image}
+          title={item.title}
+          price={item.price}
+          description={item.description}
+          rating={item.rating.rate}
+        />
+      ))}
     </div>
   );
 }
