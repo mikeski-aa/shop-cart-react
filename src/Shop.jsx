@@ -28,6 +28,7 @@ export default function Shop() {
             price={item.price}
             description={item.description}
             rating={item.rating.rate}
+            id={item.id}
           />
         ))}
       </div>

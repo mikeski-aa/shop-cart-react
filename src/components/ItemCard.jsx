@@ -5,6 +5,11 @@ import "../styles/ItemCard.css";
 // function for rendering the individual item card
 
 function ItemCard(props) {
+  const handleAddToCart = () => {
+    console.log(props.id);
+    return props.id;
+  };
+
   return (
     <div className="itemCard">
       <div className="imageContainer">
@@ -12,11 +17,11 @@ function ItemCard(props) {
       </div>
       <div className="itemNameAndPrice">
         <h3 className="itemName">{props.title}</h3>
-        <h3 className="itemPrice">{props.price}</h3>
+        <h3 className="itemPrice">€ {props.price}</h3>
       </div>
       <div className="itemDescription">{props.description}</div>
       <div className="itemRating">{props.rating}</div>
-      <button>Add to cart</button>
+      <button onClick={handleAddToCart}>Add to cart</button>
     </div>
   );
 }
