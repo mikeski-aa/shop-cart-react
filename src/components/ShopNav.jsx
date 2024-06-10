@@ -3,6 +3,7 @@
 function ShopNav() {
   return (
     <div className="shopNav">
+      <button>All items</button>
       <button>Men's clothing</button>
       <button>Women's clothing</button>
       <button>Jewelery</button>

@@ -1,8 +1,8 @@
-import { Link } from "react-router-dom";
 import { useState, useEffect, createContext } from "react";
 import { callShopApi } from "./components/ApiFetch";
 import { Nav } from "./components/Nav";
-import { ItemCard } from "./components/ItemCard";
+import { ShopNav } from "./components/ShopNav";
+import { RenderAllItems } from "./components/RenderAllItems";
 
 export const ItemContext = createContext();
 
@@ -10,6 +10,7 @@ export default function Shop() {
   const [items, setItems] = useState([]);
   const [cart, setNewCart] = useState([]);
   const [showCart, setShowCart] = useState(false);
+  const [storePage, setStorePage] = useState("1");
 
   useEffect(() => {
     console.log(items.length);
@@ -21,21 +22,14 @@ export default function Shop() {
     <div>
       <h1>Shop</h1>
       <Nav />
-      <div className="allItems">
-        <ItemContext.Provider value={{ items, setItems, cart, setNewCart }}>
-          {items.map((item) => (
-            <ItemCard
-              key={item.id}
-              image={item.image}
-              title={item.title}
-              price={item.price}
-              description={item.description}
-              rating={item.rating.rate}
-              id={item.id}
-            />
-          ))}
-        </ItemContext.Provider>
-      </div>
+      <ItemContext.Provider
+        value={{ items, setItems, cart, setNewCart, storePage, setStorePage }}
+      >
+        <ShopNav />
+        <div className="allItems">
+          <RenderAllItems />
+        </div>
+      </ItemContext.Provider>
     </div>
   );
 }
