@@ -10,7 +10,7 @@ export default function Shop() {
   const [items, setItems] = useState([]);
   const [cart, setNewCart] = useState([]);
   const [showCart, setShowCart] = useState(false);
-  const [storePage, setStorePage] = useState("1");
+  const [storePage, setStorePage] = useState(1);
 
   useEffect(() => {
     console.log(items.length);
