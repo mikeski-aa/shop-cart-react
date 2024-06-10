@@ -21,14 +21,16 @@ function renderHelper(itemContext) {
     return filterItems(itemContext, "jewelery");
   } else if (itemContext.storePage == 5) {
     return filterItems(itemContext, "electronics");
-  }
+  } else return [1];
 }
 
 // function to render shop cards depending on input
 function RenderAllItems() {
   const itemContext = useContext(ItemContext);
 
-  console.log(renderHelper(itemContext));
+  if (itemContext.storePage === 6) {
+    return null;
+  }
 
   return (
     <div className="cards">

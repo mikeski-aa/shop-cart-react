@@ -26,13 +26,24 @@ function ShopNav() {
     itemContext.setStorePage(5);
   };
 
+  const handleCartClick = () => {
+    itemContext.setStorePage(6);
+  };
+
   return (
     <div className="shopNav">
-      <button onClick={handleAllClick}>All items</button>
-      <button onClick={handleMenClick}>Men's clothing</button>
-      <button onClick={handleWomenClick}>Women's clothing</button>
-      <button onClick={handleJeweleryClick}>Jewelery</button>
-      <button onClick={handleElectronicsClick}>Electronics</button>
+      <div className="categoryButtons">
+        <button onClick={handleAllClick}>All items</button>
+        <button onClick={handleMenClick}>Men's clothing</button>
+        <button onClick={handleWomenClick}>Women's clothing</button>
+        <button onClick={handleJeweleryClick}>Jewelery</button>
+        <button onClick={handleElectronicsClick}>Electronics</button>
+      </div>
+      <div className="cartBtn">
+        <button className="cart" onClick={handleCartClick}>
+          Cart [#]
+        </button>
+      </div>
     </div>
   );
 }

@@ -3,6 +3,7 @@ import { callShopApi } from "./components/ApiFetch";
 import { Nav } from "./components/Nav";
 import { ShopNav } from "./components/ShopNav";
 import { RenderAllItems } from "./components/RenderAllItems";
+import { Cart } from "./components/Cart";
 
 export const ItemContext = createContext();
 
@@ -28,6 +29,7 @@ export default function Shop() {
         <ShopNav />
         <div className="allItems">
           <RenderAllItems />
+          <Cart />
         </div>
       </ItemContext.Provider>
     </div>
