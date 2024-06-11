@@ -25,6 +25,7 @@ function Cart() {
             name={item.title}
             quantity={item.itemQuantity}
             subtotal={+item.itemQuantity * +item.price}
+            id={item.id}
           />
         ))}
       </div>
