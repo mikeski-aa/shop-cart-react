@@ -51,6 +51,12 @@ function CartItem(props) {
     itemContext.setNewCart(tempArray);
   };
 
+  const handleItemRemove = () => {
+    let tempArray = [...itemContext.cart];
+    let purgedArray = tempArray.filter((item) => item.id !== props.id);
+    itemContext.setNewCart(purgedArray);
+  };
+
   return (
     <div className="cartItem">
       <div className="cartImageDiv">
@@ -67,6 +73,7 @@ function CartItem(props) {
         ></input>
         <button onClick={handleIncrementClick}>+</button>
       </div>
+      <button onClick={handleItemRemove}>Remove from cart</button>
     </div>
   );
 }
