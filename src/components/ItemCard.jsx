@@ -21,7 +21,7 @@ function addNewItemToCart(itemContext, id) {
   console.log(itemContext.cart);
   let tempArray = [...itemContext.items];
   let itemClicked = tempArray.filter((item) => item.id == id)[0];
-  itemClicked = { ...itemClicked, itemQuanitity: 0 };
+  itemClicked = { ...itemClicked, itemQuantity: 1 };
   itemContext.setNewCart([...itemContext.cart, itemClicked]);
 }
 
@@ -31,9 +31,9 @@ function incrementAmountInCart(itemContext, id) {
 
   for (let x = 0; x < tempArray.length; x++) {
     if (tempArray[x].id === id) {
-      let tempValue = tempArray[x].itemQuanitity;
+      let tempValue = tempArray[x].itemQuantity;
       tempValue += 1;
-      tempArray[x] = { ...tempArray[x], itemQuanitity: tempValue };
+      tempArray[x] = { ...tempArray[x], itemQuantity: tempValue };
     }
   }
 
