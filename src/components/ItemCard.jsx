@@ -15,6 +15,31 @@ function checkIfItemExists(itemId, arrayToSearch) {
     return false;
   }
 }
+
+// function to add item to cart if it does not exist
+function addNewItemToCart(itemContext, id) {
+  console.log(itemContext.cart);
+  let tempArray = [...itemContext.items];
+  let itemClicked = tempArray.filter((item) => item.id == id)[0];
+  itemClicked = { ...itemClicked, itemQuanitity: 0 };
+  itemContext.setNewCart([...itemContext.cart, itemClicked]);
+}
+
+// function for changing item quantity value if item is already in the cart
+function incrementAmountInCart(itemContext, id) {
+  let tempArray = [...itemContext.cart];
+
+  for (let x = 0; x < tempArray.length; x++) {
+    if (tempArray[x].id === id) {
+      let tempValue = tempArray[x].itemQuanitity;
+      tempValue += 1;
+      tempArray[x] = { ...tempArray[x], itemQuanitity: tempValue };
+    }
+  }
+
+  itemContext.setNewCart(tempArray);
+}
+
 // function for rendering the individual item card
 
 function ItemCard(props) {
@@ -22,13 +47,22 @@ function ItemCard(props) {
 
   const handleAddToCart = () => {
     // need to set state / add this to cart state
-    let tempArray = [...itemContext.items];
-    let filteredItem = tempArray.filter((item) => item.id == props.id)[0];
-    filteredItem = { ...filteredItem, itemQuantity: 0 };
 
-    checkIfItemExists(props.id, itemContext.cart);
+    // if (checkIfItemExists(props.id, itemContext.cart) === true) {
+    //   filteredItem.itemQuantity;
+    //   console.log(filteredItem.itemQuantity);
+    //   for (let x = 0; x < tempArray.length; x++) {
+    //     if (tempArray[x].id === props.id) {
+    //       tempArray[x] = { ...tempArray[x], itemQuantity: 1 };
+    //     }
+    //   }
+    //   itemContext.setNewCart(tempArray);
 
-    itemContext.setNewCart([...itemContext.cart, filteredItem]);
+    //   console.log(filteredItem);
+    // } else {
+    //   filteredItem = { ...filteredItem, itemQuantity: 0 };
+    //   itemContext.setNewCart([...itemContext.cart, filteredItem]);
+    // }
 
     return props.id;
   };
@@ -49,4 +83,4 @@ function ItemCard(props) {
   );
 }
 
-export { ItemCard };
+export { ItemCard, checkIfItemExists };
