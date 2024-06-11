@@ -4,18 +4,47 @@
   width: 200px;
   background-color: peachpuff;
   outline: 2px solid black;
+  align-items: center;
+  justify-content: space-evenly;
+  max-height: 200px;
+  transition: 1s ease-in;
+}
+.itemCard.show {
+  height: fit-content;
+  max-height: 400px;
 }
 
 .itemImage {
-  max-width: 70px;
   max-height: 70px;
 }
 
 .itemDescription {
-  overflow: hidden;
 }
 
 .cards {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 200px);
+  gap: 10px;
+}
+
+.itemName,
+.itemPrice {
+  margin: 0;
+  text-align: center;
+}
+
+.itemDescription.hide {
+  max-height: 0;
+  opacity: 0;
+  transform: scaleY(0);
+}
+
+.itemDescription.show {
+  max-height: 100%;
+  opacity: 1;
+  transform: scaleY(1);
+}
+
+.itemDescription {
+  transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 }

@@ -1,5 +1,5 @@
 import "../styles/ItemCard.css";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { ItemContext } from "../Shop";
 
 // helper function for finding whether the item already exists in the array
@@ -44,6 +44,7 @@ function incrementAmountInCart(itemContext, id) {
 
 function ItemCard(props) {
   const itemContext = useContext(ItemContext);
+  const [descState, setDescState] = useState("hide");
 
   const handleAddToCart = () => {
     if (checkIfItemExists(props.id, itemContext.cart) === false) {
@@ -55,16 +56,31 @@ function ItemCard(props) {
     console.log(itemContext.cart);
   };
 
+  const mouseEnterEvent = () => {
+    console.log("hover enter");
+    setDescState("show");
+  };
+
+  const mouseLeaveEvent = () => {
+    console.log("hover hoverexit");
+    setDescState("hide");
+  };
+
   return (
-    <div className="itemCard">
+    <div
+      className={`itemCard ${descState}`}
+      onMouseEnter={mouseEnterEvent}
+      onMouseLeave={mouseLeaveEvent}
+    >
       <div className="imageContainer">
         <img className="itemImage" src={props.image}></img>
       </div>
       <div className="itemNameAndPrice">
         <h3 className="itemName">{props.title}</h3>
+        <hr />
         <h3 className="itemPrice">€ {props.price}</h3>
       </div>
-      <div className="itemDescription">{props.description}</div>
+      <div className={`itemDescription ${descState}`}>{props.description}</div>
       <div className="itemRating">{props.rating}</div>
       <button onClick={handleAddToCart}>Add to cart</button>
     </div>
