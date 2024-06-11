@@ -11,6 +11,8 @@ function getTotalCartValue(itemContext) {
     newTotal += newSubtotal;
   }
 
+  Math.round(newTotal * 100) / 100;
+
   return newTotal;
 }
 

@@ -62,18 +62,28 @@ function CartItem(props) {
       <div className="cartImageDiv">
         <img className="cartImage" src={props.url}></img>
       </div>
-      <div className="itemName">{props.name}</div>
-      <div className="itemSubtotal">EUR {props.subtotal}</div>
-      <div className="quantityChange">
-        <button onClick={handleDecrementClick}>-</button>
-        <input
-          type="number"
-          value={props.quantity}
-          onChange={handleInputChange}
-        ></input>
-        <button onClick={handleIncrementClick}>+</button>
+      <div className="containerForCartStuff">
+        <div className="itemName">
+          <b>{props.name}</b>
+        </div>
+        <div className="containerSubQuantity">
+          <div className="itemSubtotal">
+            EUR {Math.round(props.subtotal * 100) / 100}
+          </div>
+          <div className="quantityChange">
+            <button onClick={handleDecrementClick}>-</button>
+            <input
+              className="quantityInputBox"
+              type="number"
+              value={props.quantity}
+              onChange={handleInputChange}
+            ></input>
+            <button onClick={handleIncrementClick}>+</button>
+          </div>
+        </div>
+
+        <button onClick={handleItemRemove}>Remove from cart</button>
       </div>
-      <button onClick={handleItemRemove}>Remove from cart</button>
     </div>
   );
 }

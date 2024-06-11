@@ -1,3 +1,26 @@
 .cartImage {
-  width: 250px;
+  height: 15vh;
+  border: 2px solid grey;
+  border-radius: 12px;
+}
+
+.cartItem {
+  display: flex;
+  width: 70%;
+  justify-content: space-between;
+  background-color: #dbb5b5;
+  padding: 10px;
+  border-radius: 12px;
+}
+
+.containerForCartStuff {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.quantityInputBox {
+  width: 30px;
+  text-align: center;
 }

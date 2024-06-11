@@ -1,8 +1,7 @@
 .itemCard {
   display: flex;
   flex-direction: column;
-
-  background-color: peachpuff;
+  background-color: rgba(255, 255, 255, 0);
   outline: 2px solid black;
   align-items: center;
   justify-content: space-evenly;
@@ -16,7 +15,6 @@
 
 .itemImage {
   max-height: 10vh;
-  border: 2px solid black;
   border-radius: 12px;
 }
 
@@ -33,6 +31,15 @@
 .itemPrice {
   margin: 0;
   text-align: center;
+}
+
+.itemNameAndPrice {
+  width: 100%;
+}
+
+.itemName {
+  font-size: inherit;
+  width: 100%;
 }
 
 .itemDescription.hide {
@@ -64,4 +71,8 @@
   display: flex;
   align-items: center;
   gap: 5px;
+}
+
+.allItems {
+  padding: 25px;
 }

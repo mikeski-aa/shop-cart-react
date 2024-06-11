@@ -63,7 +63,7 @@ function ShopNav() {
       <div className="categoryButtons">
         <button
           onClick={handleAllClick}
-          className={`allItems ${getClassActive()}`}
+          className={`allItemsBtn ${getClassActive()}`}
         >
           All items
         </button>
