@@ -1,6 +1,19 @@
 import { useContext } from "react";
 import { ItemContext } from "../Shop";
 
+// function to calculate number of total items in the cart
+function calculateTotalNumberOfItems(itemContext) {
+  let tempTotal = 0;
+
+  for (let x = 0; x < itemContext.cart.length; x++) {
+    tempTotal += itemContext.cart[x].itemQuantity;
+    console.log(itemContext.cart[x].itemQuantity);
+  }
+
+  console.log(tempTotal);
+  return tempTotal;
+}
+
 // navigation bar to allow users to switch categories while in the shop
 
 function ShopNav() {
@@ -41,7 +54,7 @@ function ShopNav() {
       </div>
       <div className="cartBtn">
         <button className="cart" onClick={handleCartClick}>
-          Cart [#]
+          Cart ({calculateTotalNumberOfItems(itemContext)})
         </button>
       </div>
     </div>

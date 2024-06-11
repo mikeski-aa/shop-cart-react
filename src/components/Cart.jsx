@@ -12,9 +12,6 @@ function Cart() {
     return null;
   }
 
-  console.log("CURRENT CART");
-  console.log(itemContext.cart);
-
   return (
     <div className="currentCart">
       <div className="currentItems">
