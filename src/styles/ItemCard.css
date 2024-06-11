@@ -1,21 +1,23 @@
 .itemCard {
   display: flex;
   flex-direction: column;
-  width: 200px;
+
   background-color: peachpuff;
   outline: 2px solid black;
   align-items: center;
   justify-content: space-evenly;
-  max-height: 200px;
-  transition: 1s ease-in;
+  max-height: fit-content;
+  transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  border-radius: 12px;
 }
 .itemCard.show {
-  height: fit-content;
-  max-height: 400px;
+  max-height: fit-content;
 }
 
 .itemImage {
-  max-height: 70px;
+  max-height: 10vh;
+  border: 2px solid black;
+  border-radius: 12px;
 }
 
 .itemDescription {
@@ -23,7 +25,7 @@
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, 200px);
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 10px;
 }
 
@@ -47,4 +49,19 @@
 
 .itemDescription {
   transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.ratingAndButton {
+  display: flex;
+  gap: 10px;
+}
+
+.starImage {
+  height: 15px;
+}
+
+.itemRating {
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }

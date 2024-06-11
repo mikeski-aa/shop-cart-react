@@ -1,6 +1,7 @@
 import "../styles/ItemCard.css";
 import { useContext, useState } from "react";
 import { ItemContext } from "../Shop";
+import star from "../assets/star-full.svg";
 
 // helper function for finding whether the item already exists in the array
 function checkIfItemExists(itemId, arrayToSearch) {
@@ -57,13 +58,13 @@ function ItemCard(props) {
   };
 
   const mouseEnterEvent = () => {
-    console.log("hover enter");
-    setDescState("show");
+    // console.log("hover enter");
+    // setDescState("show");
   };
 
   const mouseLeaveEvent = () => {
-    console.log("hover hoverexit");
-    setDescState("hide");
+    // console.log("hover hoverexit");
+    // setDescState("hide");
   };
 
   return (
@@ -81,8 +82,12 @@ function ItemCard(props) {
         <h3 className="itemPrice">€ {props.price}</h3>
       </div>
       <div className={`itemDescription ${descState}`}>{props.description}</div>
-      <div className="itemRating">{props.rating}</div>
-      <button onClick={handleAddToCart}>Add to cart</button>
+      <div className="ratingAndButton">
+        <div className="itemRating">
+          {props.rating} <img src={star} className="starImage"></img>
+        </div>
+        <button onClick={handleAddToCart}>Add to cart</button>
+      </div>
     </div>
   );
 }
