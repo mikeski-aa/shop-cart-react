@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { ItemContext } from "../Shop";
+import "../styles/ShopNav.css";
 
 // function to calculate number of total items in the cart
 function calculateTotalNumberOfItems(itemContext) {
@@ -41,17 +42,61 @@ function ShopNav() {
     itemContext.setStorePage(6);
   };
 
+  const getClassActive = () => {
+    if (itemContext.storePage === 1) {
+      return "activeOne";
+    } else if (itemContext.storePage === 2) {
+      return "activeTwo";
+    } else if (itemContext.storePage === 3) {
+      return "activeThree";
+    } else if (itemContext.storePage === 4) {
+      return "activeFour";
+    } else if (itemContext.storePage === 5) {
+      return "activeFive";
+    } else if (itemContext.storePage === 6) {
+      return "activeSix";
+    }
+  };
+
   return (
     <div className="shopNav">
       <div className="categoryButtons">
-        <button onClick={handleAllClick}>All items</button>
-        <button onClick={handleMenClick}>Men's clothing</button>
-        <button onClick={handleWomenClick}>Women's clothing</button>
-        <button onClick={handleJeweleryClick}>Jewelery</button>
-        <button onClick={handleElectronicsClick}>Electronics</button>
+        <button
+          onClick={handleAllClick}
+          className={`allItems ${getClassActive()}`}
+        >
+          All items
+        </button>
+        <button
+          onClick={handleMenClick}
+          className={`mensClothing ${getClassActive()}`}
+        >
+          Men's clothing
+        </button>
+        <button
+          onClick={handleWomenClick}
+          className={`womensClothing ${getClassActive()}`}
+        >
+          Women's clothing
+        </button>
+        <button
+          onClick={handleJeweleryClick}
+          className={`jewelery ${getClassActive()}`}
+        >
+          Jewelery
+        </button>
+        <button
+          onClick={handleElectronicsClick}
+          className={`electronics ${getClassActive()}`}
+        >
+          Electronics
+        </button>
       </div>
       <div className="cartBtn">
-        <button className="cart" onClick={handleCartClick}>
+        <button
+          className={`cart ${getClassActive()}`}
+          onClick={handleCartClick}
+        >
           Cart ({calculateTotalNumberOfItems(itemContext)})
         </button>
       </div>
