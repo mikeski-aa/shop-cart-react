@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { ItemContext } from "../Shop";
 import "../styles/ShopNav.css";
 
@@ -17,6 +17,7 @@ function calculateTotalNumberOfItems(itemContext) {
 
 function ShopNav() {
   const itemContext = useContext(ItemContext);
+  const [totalItems, setTotalItems] = useState(0);
 
   const handleAllClick = () => {
     itemContext.setStorePage(1);
@@ -58,6 +59,10 @@ function ShopNav() {
     }
   };
 
+  useEffect(() => {
+    setTotalItems(calculateTotalNumberOfItems(itemContext));
+  }, [itemContext.cart]);
+
   return (
     <div className="shopNav">
       <div className="categoryButtons">
@@ -97,7 +102,7 @@ function ShopNav() {
           className={`cart ${getClassActive()}`}
           onClick={handleCartClick}
         >
-          Cart ({calculateTotalNumberOfItems(itemContext)})
+          Cart ({totalItems})
         </button>
       </div>
     </div>

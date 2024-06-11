@@ -40,6 +40,8 @@ function CartItem(props) {
       return alert(
         'You cannot enter a value less than 1, if you want to delete the item from your cart, please click "delete from cart" below'
       );
+    } else if (e.target.value > 999) {
+      return alert("You can not add more than 999 of one item!");
     }
 
     let tempArray = [...itemContext.cart];
@@ -68,7 +70,7 @@ function CartItem(props) {
         </div>
         <div className="containerSubQuantity">
           <div className="itemSubtotal">
-            EUR {Math.round(props.subtotal * 100) / 100}
+            € {Math.round(props.subtotal * 100) / 100}
           </div>
           <div className="quantityChange">
             <button onClick={handleDecrementClick}>-</button>
@@ -82,7 +84,9 @@ function CartItem(props) {
           </div>
         </div>
 
-        <button onClick={handleItemRemove}>Remove from cart</button>
+        <button className="removeItemButton" onClick={handleItemRemove}>
+          Remove from cart
+        </button>
       </div>
     </div>
   );

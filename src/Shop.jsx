@@ -28,15 +28,15 @@ export default function Shop() {
     };
   }, []);
 
-  useEffect(() => {
-    if (getSessionStorageData("cart").length > 0) {
-      console.log("item stored detected");
-    }
-    // setSessionStorageData("cart", cart);
-    return () => {
-      setSessionStorageData("cart", cart);
-    };
-  }, [cart]);
+  // useEffect(() => {
+  //   if (getSessionStorageData("cart").length > 0) {
+  //     console.log("item stored detected");
+  //   }
+  //   // setSessionStorageData("cart", cart);
+  //   return () => {
+  //     setSessionStorageData("cart", cart);
+  //   };
+  // }, [cart]);
 
   return (
     <div>

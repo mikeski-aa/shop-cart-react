@@ -1,6 +1,5 @@
 .cartImage {
   height: 15vh;
-  border: 2px solid grey;
   border-radius: 12px;
 }
 
@@ -11,16 +10,52 @@
   background-color: #dbb5b5;
   padding: 10px;
   border-radius: 12px;
+  border: 2px solid #d88d8d;
 }
 
 .containerForCartStuff {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
+  align-items: end;
 }
 
 .quantityInputBox {
   width: 30px;
   text-align: center;
+  font-size: 1rem;
+  border-radius: 12px;
+  border: none;
+}
+
+.quantityInputBox::-webkit-outer-spin-button,
+.quantityInputBox::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.itemSubtotal {
+  text-align: end;
+  font-size: 1.5rem;
+  width: 200px;
+}
+
+.quantityChange {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: end;
+}
+
+.containerSubQuantity {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 5px;
+}
+
+.currentItems {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }

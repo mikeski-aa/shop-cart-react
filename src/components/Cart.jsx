@@ -43,7 +43,9 @@ function Cart() {
       </div>
       <div className="totalOrder">
         <h2>Order total</h2>
-        <div className="totalOrderValue">{getTotalCartValue(itemContext)}</div>
+        <div className="totalOrderValue">
+          € {getTotalCartValue(itemContext)}
+        </div>
         <button>Proceed to checkout</button>
       </div>
     </div>
