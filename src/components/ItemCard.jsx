@@ -46,25 +46,13 @@ function ItemCard(props) {
   const itemContext = useContext(ItemContext);
 
   const handleAddToCart = () => {
-    // need to set state / add this to cart state
+    if (checkIfItemExists(props.id, itemContext.cart) === false) {
+      addNewItemToCart(itemContext, props.id);
+    } else {
+      incrementAmountInCart(itemContext, props.id);
+    }
 
-    // if (checkIfItemExists(props.id, itemContext.cart) === true) {
-    //   filteredItem.itemQuantity;
-    //   console.log(filteredItem.itemQuantity);
-    //   for (let x = 0; x < tempArray.length; x++) {
-    //     if (tempArray[x].id === props.id) {
-    //       tempArray[x] = { ...tempArray[x], itemQuantity: 1 };
-    //     }
-    //   }
-    //   itemContext.setNewCart(tempArray);
-
-    //   console.log(filteredItem);
-    // } else {
-    //   filteredItem = { ...filteredItem, itemQuantity: 0 };
-    //   itemContext.setNewCart([...itemContext.cart, filteredItem]);
-    // }
-
-    return props.id;
+    console.log(itemContext.cart);
   };
 
   return (
