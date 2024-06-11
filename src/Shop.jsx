@@ -8,6 +8,7 @@ import {
   getSessionStorageData,
   setSessionStorageData,
 } from "./components/sessionStorage";
+import "../src/styles/Shop.css";
 
 export const ItemContext = createContext();
 
@@ -39,13 +40,17 @@ export default function Shop() {
   // }, [cart]);
 
   return (
-    <div>
+    <div className="shopContainer">
       <h1>Shop</h1>
-      <Nav />
+      <div className="containerRandom">
+        <Nav />
+      </div>
+
       <ItemContext.Provider
         value={{ items, setItems, cart, setNewCart, storePage, setStorePage }}
       >
         <ShopNav />
+
         <div className="allItems">
           <RenderAllItems />
           <Cart />

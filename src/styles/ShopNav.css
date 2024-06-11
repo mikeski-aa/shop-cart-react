@@ -21,3 +21,9 @@
 .cart.activeSix {
   background-color: orange;
 }
+
+.shopNav {
+  position: relative;
+  transform: translateX(-50%);
+  left: 50%;
+}

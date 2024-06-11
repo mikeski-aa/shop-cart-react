@@ -7,9 +7,12 @@ import { callShopApi } from "./components/ApiFetch";
 
 function App() {
   return (
-    <div>
+    <div className="homeContainer">
       <h1>Homepage</h1>
-      <Nav />
+      <div className="containerRandom">
+        <Nav />
+      </div>
+
       <div role="test" className="lol">
         dddd
       </div>
