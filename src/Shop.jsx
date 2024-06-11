@@ -4,6 +4,10 @@ import { Nav } from "./components/Nav";
 import { ShopNav } from "./components/ShopNav";
 import { RenderAllItems } from "./components/RenderAllItems";
 import { Cart } from "./components/Cart";
+import {
+  getSessionStorageData,
+  setSessionStorageData,
+} from "./components/sessionStorage";
 
 export const ItemContext = createContext();
 
@@ -14,10 +18,25 @@ export default function Shop() {
   const [storePage, setStorePage] = useState(1);
 
   useEffect(() => {
-    console.log(items.length);
-    console.log("use effect just fired");
-    callShopApi().then((response) => setItems(response));
+    console.log("Shop.jsx is mounting");
+    callShopApi()
+      .then((response) => setItems(response))
+      .then(console.log("You called the API again idiot"));
+
+    return () => {
+      console.log("Shop is being unmounted");
+    };
   }, []);
+
+  useEffect(() => {
+    if (getSessionStorageData("cart").length > 0) {
+      console.log("item stored detected");
+    }
+    // setSessionStorageData("cart", cart);
+    return () => {
+      setSessionStorageData("cart", cart);
+    };
+  }, [cart]);
 
   return (
     <div>

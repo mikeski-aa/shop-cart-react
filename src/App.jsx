@@ -6,7 +6,6 @@ import { getCallResults } from "./components/ApiFetch";
 import { callShopApi } from "./components/ApiFetch";
 
 function App() {
-  console.log(getCallResults());
   return (
     <div>
       <h1>Homepage</h1>

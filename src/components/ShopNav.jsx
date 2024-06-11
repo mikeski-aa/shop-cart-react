@@ -7,10 +7,8 @@ function calculateTotalNumberOfItems(itemContext) {
 
   for (let x = 0; x < itemContext.cart.length; x++) {
     tempTotal += itemContext.cart[x].itemQuantity;
-    console.log(itemContext.cart[x].itemQuantity);
   }
 
-  console.log(tempTotal);
   return tempTotal;
 }
 

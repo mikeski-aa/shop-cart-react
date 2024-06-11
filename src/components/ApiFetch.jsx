@@ -22,9 +22,7 @@ async function callShopApi() {
 }
 
 function getCallResults() {
-  callShopApi().then((result) => {
-    console.log(result);
-  });
+  callShopApi().then((result) => {});
 }
 
 export { callShopApi, getCallResults };
