@@ -73,14 +73,18 @@ function CartItem(props) {
             € {Math.round(props.subtotal * 100) / 100}
           </div>
           <div className="quantityChange">
-            <button onClick={handleDecrementClick}>-</button>
+            <button onClick={handleDecrementClick} className="decrementBtn">
+              -
+            </button>
             <input
               className="quantityInputBox"
               type="number"
               value={props.quantity}
               onChange={handleInputChange}
             ></input>
-            <button onClick={handleIncrementClick}>+</button>
+            <button onClick={handleIncrementClick} className="incrementBtn">
+              +
+            </button>
           </div>
         </div>
 

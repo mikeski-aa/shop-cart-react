@@ -1,13 +1,14 @@
 .itemCard {
   display: flex;
   flex-direction: column;
-  background-color: rgba(255, 255, 255, 0);
+  background-color: white;
   outline: 2px solid black;
   align-items: center;
   justify-content: space-evenly;
   max-height: fit-content;
   transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
   border-radius: 12px;
+  padding: 6px;
 }
 .itemCard.show {
   max-height: fit-content;
@@ -16,6 +17,7 @@
 .itemImage {
   max-height: 10vh;
   border-radius: 12px;
+  max-width: 100%;
 }
 
 .itemDescription {
@@ -23,8 +25,9 @@
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 10px;
+  justify-content: center;
 }
 
 .itemName,

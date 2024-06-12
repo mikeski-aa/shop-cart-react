@@ -15,29 +15,45 @@ export const ItemContext = createContext();
 export default function Shop() {
   const [items, setItems] = useState([]);
   const [cart, setNewCart] = useState([]);
-  const [showCart, setShowCart] = useState(false);
+  const [showSpinner, setShowSpinner] = useState(true);
   const [storePage, setStorePage] = useState(1);
 
   useEffect(() => {
     console.log("Shop.jsx is mounting");
     callShopApi()
       .then((response) => setItems(response))
-      .then(console.log("You called the API again idiot"));
+      .finally(setShowSpinner(false));
 
     return () => {
       console.log("Shop is being unmounted");
     };
   }, []);
 
-  // useEffect(() => {
-  //   if (getSessionStorageData("cart").length > 0) {
-  //     console.log("item stored detected");
-  //   }
-  //   // setSessionStorageData("cart", cart);
-  //   return () => {
-  //     setSessionStorageData("cart", cart);
-  //   };
-  // }, [cart]);
+  useEffect(() => {
+    console.log(showSpinner);
+    return () => {};
+  }, [showSpinner]);
+
+  if (showSpinner == true) {
+    return (
+      <div className="shopContainer">
+        <div className="containerRandom">
+          <h1>Shop</h1>
+          <Nav />
+        </div>
+        <ItemContext.Provider
+          value={{ items, setItems, cart, setNewCart, storePage, setStorePage }}
+        >
+          <div className="containerForShop">
+            <ShopNav />
+            <div className="allItems">
+              <h1>Loading Data</h1>
+            </div>
+          </div>
+        </ItemContext.Provider>
+      </div>
+    );
+  }
 
   return (
     <div className="shopContainer">
@@ -51,7 +67,6 @@ export default function Shop() {
       >
         <div className="containerForShop">
           <ShopNav />
-
           <div className="allItems">
             <RenderAllItems />
             <Cart />

@@ -25,7 +25,10 @@ function Cart() {
     return null;
   }
 
-  useEffect(() => {}, [itemContext.cart]);
+  const handleCheckoutClick = () => {
+    alert("Proceeding to payment!");
+    itemContext.setNewCart([]);
+  };
 
   return (
     <div className="currentCart">
@@ -48,7 +51,9 @@ function Cart() {
           <div className="totalOrderValue">
             € {getTotalCartValue(itemContext)}
           </div>
-          <button className="checkoutBtn">Proceed to checkout</button>
+          <button className="checkoutBtn" onClick={handleCheckoutClick}>
+            Proceed to checkout
+          </button>
         </div>
       </div>
     </div>
