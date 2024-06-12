@@ -23,7 +23,14 @@
 }
 
 .shopNav {
-  position: relative;
+  /* position: relative;
   transform: translateX(-50%);
-  left: 50%;
+  left: 50%; */
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.navContainerForbuttons {
+  display: flex;
 }

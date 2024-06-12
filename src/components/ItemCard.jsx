@@ -86,7 +86,9 @@ function ItemCard(props) {
         <div className="itemRating">
           {props.rating} <img src={star} className="starImage"></img>
         </div>
-        <button onClick={handleAddToCart}>Add to cart</button>
+        <button onClick={handleAddToCart} className="addToCartBtn">
+          Add to cart
+        </button>
       </div>
     </div>
   );

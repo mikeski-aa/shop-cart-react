@@ -65,45 +65,47 @@ function ShopNav() {
 
   return (
     <div className="shopNav">
-      <div className="categoryButtons">
-        <button
-          onClick={handleAllClick}
-          className={`allItemsBtn ${getClassActive()}`}
-        >
-          All items
-        </button>
-        <button
-          onClick={handleMenClick}
-          className={`mensClothing ${getClassActive()}`}
-        >
-          Men's clothing
-        </button>
-        <button
-          onClick={handleWomenClick}
-          className={`womensClothing ${getClassActive()}`}
-        >
-          Women's clothing
-        </button>
-        <button
-          onClick={handleJeweleryClick}
-          className={`jewelery ${getClassActive()}`}
-        >
-          Jewelery
-        </button>
-        <button
-          onClick={handleElectronicsClick}
-          className={`electronics ${getClassActive()}`}
-        >
-          Electronics
-        </button>
-      </div>
-      <div className="cartBtn">
-        <button
-          className={`cart ${getClassActive()}`}
-          onClick={handleCartClick}
-        >
-          Cart ({totalItems})
-        </button>
+      <div className="navContainerForbuttons">
+        <div className="categoryButtons">
+          <button
+            onClick={handleAllClick}
+            className={`allItemsBtn ${getClassActive()}`}
+          >
+            All items
+          </button>
+          <button
+            onClick={handleMenClick}
+            className={`mensClothing ${getClassActive()}`}
+          >
+            Men's clothing
+          </button>
+          <button
+            onClick={handleWomenClick}
+            className={`womensClothing ${getClassActive()}`}
+          >
+            Women's clothing
+          </button>
+          <button
+            onClick={handleJeweleryClick}
+            className={`jewelery ${getClassActive()}`}
+          >
+            Jewelery
+          </button>
+          <button
+            onClick={handleElectronicsClick}
+            className={`electronics ${getClassActive()}`}
+          >
+            Electronics
+          </button>
+        </div>
+        <div className="cartBtn">
+          <button
+            className={`cart ${getClassActive()}`}
+            onClick={handleCartClick}
+          >
+            Cart ({totalItems})
+          </button>
+        </div>
       </div>
     </div>
   );

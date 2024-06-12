@@ -1,1 +1,8 @@
+.navBar {
+  display: flex;
+  flex-direction: column;
+}
 
+.containerRandom {
+  width: 200px;
+}

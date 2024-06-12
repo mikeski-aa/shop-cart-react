@@ -65,7 +65,7 @@ function CartItem(props) {
         <img className="cartImage" src={props.url}></img>
       </div>
       <div className="containerForCartStuff">
-        <div className="itemName">
+        <div className="itemNameCart">
           <b>{props.name}</b>
         </div>
         <div className="containerSubQuantity">

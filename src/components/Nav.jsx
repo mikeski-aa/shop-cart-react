@@ -6,10 +6,10 @@ import "../styles/Nav.css";
 function Nav() {
   return (
     <div className="navBar">
-      <button>
+      <button className="homeBtn">
         <Link to="/">Homepage</Link>
       </button>
-      <button>
+      <button className="shopBtn">
         <Link to="/shop">Shop</Link>
       </button>
     </div>

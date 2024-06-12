@@ -41,19 +41,21 @@ export default function Shop() {
 
   return (
     <div className="shopContainer">
-      <h1>Shop</h1>
       <div className="containerRandom">
+        <h1>Shop</h1>
         <Nav />
       </div>
 
       <ItemContext.Provider
         value={{ items, setItems, cart, setNewCart, storePage, setStorePage }}
       >
-        <ShopNav />
+        <div className="containerForShop">
+          <ShopNav />
 
-        <div className="allItems">
-          <RenderAllItems />
-          <Cart />
+          <div className="allItems">
+            <RenderAllItems />
+            <Cart />
+          </div>
         </div>
       </ItemContext.Provider>
     </div>

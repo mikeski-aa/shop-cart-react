@@ -1,7 +1,4 @@
 .shopContainer,
 .homeContainer {
   display: flex;
-  flex-direction: column;
-  align-items: start;
-  position: relative;
 }

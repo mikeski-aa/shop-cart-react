@@ -73,5 +73,7 @@
 }
 
 .allItems {
-  padding: 25px;
+  padding-left: 80px;
+  padding-top: 20px;
+  padding-right: 80px;
 }

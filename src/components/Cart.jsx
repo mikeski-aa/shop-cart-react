@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { ItemContext } from "../Shop";
 import { CartItem } from "./CartItem";
 
@@ -6,14 +6,13 @@ import { CartItem } from "./CartItem";
 function getTotalCartValue(itemContext) {
   let newTotal = 0;
   let newSubtotal = 0;
+
   for (let x of itemContext.cart) {
     newSubtotal = x.itemQuantity * x.price;
     newTotal += newSubtotal;
   }
 
-  Math.round(newTotal * 100) / 100;
-
-  return newTotal;
+  return Math.round(newTotal * 100) / 100;
 }
 
 // function for displaying current cart
@@ -25,6 +24,8 @@ function Cart() {
   if (itemContext.storePage != 6) {
     return null;
   }
+
+  useEffect(() => {}, [itemContext.cart]);
 
   return (
     <div className="currentCart">
@@ -42,11 +43,13 @@ function Cart() {
         ))}
       </div>
       <div className="totalOrder">
-        <h2>Order total</h2>
-        <div className="totalOrderValue">
-          € {getTotalCartValue(itemContext)}
+        <div className="containerOrderTotal">
+          <h2>Order total</h2>
+          <div className="totalOrderValue">
+            € {getTotalCartValue(itemContext)}
+          </div>
+          <button className="checkoutBtn">Proceed to checkout</button>
         </div>
-        <button>Proceed to checkout</button>
       </div>
     </div>
   );
